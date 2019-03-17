@@ -18,7 +18,7 @@ var NumberOfJobs = 20
 
 var active = true
 var elasticSearchURL = "http://34.244.29.39:9200"
-var serviceURL = "http://0.0.0.0:8080"
+var serviceURL = "http://formatter:8080"
 
 //Jobs ...
 type Jobs struct {
