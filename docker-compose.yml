@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  ###### go-fetchers #####
+  fetcher:
+    build: ./go
+    image: go-worker 
+    restart: always
+    volumes: 
+      - ./go:/go/src/app/workers/
+    networks:
+      - appNet
+
+  ###### python-formatter #####
+  formatter:
+    build: ./python
+    image: python-service 
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - appNet
+    volumes:
+      - ./python:/usr/src/service/
+
+
+networks:
+  appNet:
+
+
